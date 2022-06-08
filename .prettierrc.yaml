@@ -1,0 +1,5 @@
+singleQuote: true
+semi: true
+arrowParens: avoid
+useTabs: false
+tabWidth: 2
