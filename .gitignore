@@ -1,6 +1,6 @@
 .env.development*
 .env.production
-
+package-*.json
 
 
 # compiled output

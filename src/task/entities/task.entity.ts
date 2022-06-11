@@ -1,15 +1,16 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
+import { TaskDetail } from '../dto/task-detail.dto';
 
 export type TaskDocument = Task & Document;
 
 @Schema()
 export class Task {
   @Prop()
-  task_details: any[];
+  task_details: TaskDetail[];
 
-  @Prop()
-  assigned_to: null | object;
+  @Prop({ type: Object })
+  assigned_to: object;
 
   @Prop()
   status_id: string;
@@ -35,8 +36,8 @@ export class Task {
   @Prop()
   execution_end_date: Date;
 
-  @Prop()
-  forms: null | object;
+  @Prop({ type: Object })
+  forms: object;
 }
 
 export const TaskSchema = SchemaFactory.createForClass(Task);
