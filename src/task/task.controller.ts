@@ -1,6 +1,5 @@
 import { Controller, UsePipes, ValidationPipe } from '@nestjs/common';
 import { MessagePattern, Payload, RpcException } from '@nestjs/microservices';
-import { GetAllDto } from './dto/get-all.dto';
 import { GetOneDto } from './dto/get-one.dto';
 import { TaskService } from './task.service';
 
@@ -10,7 +9,7 @@ export class TaskController {
   constructor(private taskService: TaskService) {}
 
   @MessagePattern('getAll')
-  async getAll(@Payload() body: GetAllDto) {
+  async getAll() {
     return await this.taskService.getAll();
   }
 
